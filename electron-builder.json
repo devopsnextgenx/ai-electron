@@ -1,0 +1,30 @@
+{
+  "appId": "com.electron.ai-electron",
+  "productName": "ai-electron",
+  "directories": {
+    "output": "dist",
+    "buildResources": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "src/main/**/*",
+    "src/renderer/**/*",
+    "package.json"
+  ],
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "category": "Development",
+    "icon": "build/icons",
+    "maintainer": "Amit Kshirsagar <amit.kshirsagar.13@gmail.com>"
+  },
+  "deb": {
+    "depends": [
+      "gconf2",
+      "gconf-service",
+      "libnotify4",
+      "libappindicator1",
+      "libxtst6",
+      "libnss3"
+    ]
+  }
+}
