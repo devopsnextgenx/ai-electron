@@ -1,8 +1,16 @@
 import React from 'react';
-import './styles/app.css';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import ContentFrame from './ContentFrame/ContentFrame';
+import './App.css';
 
 const App = () => {
-  return <h1>Hello from React + Electron!</h1>;
+  return (
+        <div className='app-frame'>
+            <Header />
+            <ContentFrame />
+            <Footer />
+        </div>);
 };
 
 export default App;

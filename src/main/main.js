@@ -6,6 +6,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const isDev = process.env.NODE_ENV === 'development';
 
+if (isDev) {
+  import('electron-reload').then(module => {
+    const electronReload = module.default;
+    electronReload(__dirname, {
+      electron: path.join(__dirname, '..', '..', 'node_modules', '.bin', 'electron'),
+      hardResetMethod: 'exit'
+    });
+  });
+}
+
 async function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1200,
@@ -21,6 +31,7 @@ async function createWindow() {
     if (isDev) {
       // React dev server typically runs on port 3000
       await mainWindow.loadURL('http://localhost:3000');
+      // await mainWindow.loadFile(path.join(__dirname, '../../dist/index.html'));
       mainWindow.webContents.openDevTools();
     } else {
       // In production, load from the built files
