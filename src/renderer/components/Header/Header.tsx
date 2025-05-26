@@ -3,8 +3,8 @@ import './Header.css';
 
 const Header: React.FC = () => {
     return (
-        <header className="header">
-            <h1>Application Header x</h1>
+        <header className="debug-element header">
+            <h1>Application Header</h1>
         </header>
     );
 };

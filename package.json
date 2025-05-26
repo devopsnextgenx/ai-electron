@@ -7,8 +7,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --mode production",
-    "dev": "concurrently \"npm start\" \"npm run electron:dev\"",
-    "electron:build": "npm run build && electron-builder",
+    "dev": "concurrently \"yarn start\" \"yarn run electron:dev\"",
+    "electron:build": "yarn clean && yarn build && electron-builder",
     "electron:dev": "NODE_ENV=development nodemon --watch src/main --watch src/renderer --exec electron .",
     "start": "webpack serve --mode development"
   },
@@ -44,7 +44,10 @@
   },
   "dependencies": {
     "@electron/remote": "^2.1.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.6",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0"
   }
 }

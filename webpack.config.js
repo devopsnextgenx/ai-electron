@@ -20,12 +20,16 @@ export default {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: 'asset/resource'
       }
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -39,5 +43,8 @@ export default {
     compress: true,
     port: 3000,
     hot: true,
+  },
+  externals: {
+    'ffi-napi': 'commonjs ffi-napi'
   },
 };

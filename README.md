@@ -38,7 +38,11 @@ yarn electron:build
 
 ```
 ai-electron/
+├── build/          # build assets
+│   ├── icons/       # icons
 ├── public/          # Static assets
+├── resources/          # build assets
+|   ├── libb64.so
 ├── src/
 │   ├── main/       # Electron main process
 │   │   └── main.js
