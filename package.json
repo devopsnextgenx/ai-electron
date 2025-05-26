@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Electron app with React and TypeScript",
   "type": "module",
-  "main": "src/main/main.js",
+  "main": "src/electron/main.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "webpack --mode production",

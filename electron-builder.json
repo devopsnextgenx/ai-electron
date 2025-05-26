@@ -7,7 +7,7 @@
   },
   "files": [
     "dist/**/*",
-    "src/main/**/*",
+    "src/electron/**/*",
     "src/renderer/**/*",
     "package.json"
   ],
