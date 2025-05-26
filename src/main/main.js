@@ -90,7 +90,7 @@ const getLibraryPath = () => {
 };
 
 // Make it available to renderer process through IPC
-ipcMain.handle('get-library-path', () => {
+ipcMain.handle('libb64', () => {
   return getLibraryPath();
 });
 

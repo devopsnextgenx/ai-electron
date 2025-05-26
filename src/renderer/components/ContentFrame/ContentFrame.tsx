@@ -4,17 +4,17 @@ import './ContentFrame.css';
 const ContentFrame: React.FC = () => {
     const [inputText, setInputText] = useState('');
     const [encodedText, setEncodedText] = useState('');
-    const [libPath, setLibPath] = useState('');
+    const [libPath, setLibb64] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
         const initLibrary = async () => {
             try {
-                const path = await window.electron.ipcRenderer.invoke('get-library-path');
-                setLibPath(path);
+                const libb64 = await window.electron.ipcRenderer.invoke('libb64');
+                setLibb64(libb64);
                 
                 // Use the exposed ffi from preload
-                const lib = (window as any).ffi.Library(path, {
+                const lib = (window as any).ffi.Library(libb64, {
                     'encode_base64': ['string', ['string']]
                 });
                 

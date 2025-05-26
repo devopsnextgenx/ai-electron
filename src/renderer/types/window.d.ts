@@ -1,14 +1,15 @@
-declare global {
-  interface Window {
-    ffi: {
-      Library: typeof import('ffi-napi')['Library']
-    };
-    electron: {
-      ipcRenderer: {
-        invoke(channel: string, ...args: any[]): Promise<any>;
-      };
-    };
-  }
-}
-
 export {};
+
+declare global {
+    interface Window {
+        electron: {
+            ipcRenderer: {
+                invoke(channel: string, ...args: any[]): Promise<any>;
+            };
+        };
+        ffi: {
+            Library: (libPath: string, funcs: any) => any;
+        };
+        libb64: any;
+    }
+}
