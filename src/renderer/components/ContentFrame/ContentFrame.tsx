@@ -14,11 +14,11 @@ const ContentFrame: React.FC = () => {
                 setLibb64(libb64);
                 
                 // Use the exposed ffi from preload
-                const lib = (window as any).ffi.Library(libb64, {
+                const lib = (window as Window).ffi.Library(libb64, {
                     'encode_base64': ['string', ['string']]
                 });
                 
-                (window as any).libb64 = lib;
+                (window as Window).libb64 = lib;
             } catch (err: any) {
                 setError(`Failed to load library: ${err.message}`);
             }
