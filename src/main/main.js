@@ -79,13 +79,9 @@ const getLibraryPath = () => {
   if (app.isPackaged) {
     // In production, use the resources path
     return path.join(process.resourcesPath, 'resources', 'libb64.so');
-    // OR if using public directory:
-    // return path.join(__dirname, '..', '..', 'public', 'libb64.so');
   } else {
     // In development
     return path.join(__dirname, '..', '..', 'resources', 'libb64.so');
-    // OR if using public directory:
-    // return path.join(__dirname, '..', '..', 'public', 'libb64.so');
   }
 };
 

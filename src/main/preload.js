@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld('electron', {
     }
   }
 });
-// Expose ffi methods
+
 contextBridge.exposeInMainWorld('ffi', {
     Library: (libPath, funcs) => {
         return ffi.Library(libPath, funcs);
