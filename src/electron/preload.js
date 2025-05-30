@@ -1,21 +1,21 @@
 const { contextBridge, ipcRenderer } = require('electron');
-// const ffiNapi = require('ffi-napi');
+const ffiNapi = require('ffi-napi');
 
-const ffiNapi = {
-    Library: (libPath, funcs) => {
-        // Mock implementation for demonstration purposes
-        return {
-            libPath,
-            funcs,
-            call: (funcName, ...args) => {
-                if (funcs[funcName]) {
-                    return funcs[funcName](...args);
-                }
-                throw new Error(`Function ${funcName} not found in library ${libPath}`);
-            }
-        };
-    }
-}
+// const ffiNapi = {
+//     Library: (libPath, funcs) => {
+//         // Mock implementation for demonstration purposes
+//         return {
+//             libPath,
+//             funcs,
+//             call: (funcName, ...args) => {
+//                 if (funcs[funcName]) {
+//                     return funcs[funcName](...args);
+//                 }
+//                 throw new Error(`Function ${funcName} not found in library ${libPath}`);
+//             }
+//         };
+//     }
+// }
 
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: {

@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "dev": "concurrently \"yarn start\" \"yarn run electron:dev\"",
     "electron:build": "yarn clean && yarn build && electron-builder",
-    "electron:dev": "NODE_ENV=development nodemon --watch src/main --watch src/renderer --exec electron .",
+    "electron:dev": "cross-env NODE_ENV=development nodemon --watch src/main --watch src/renderer --exec electron .",
     "start": "webpack serve --mode development"
   },
   "keywords": [],
@@ -46,6 +46,7 @@
     "@electron/remote": "^2.1.2",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.6",
+    "cross-env": "^7.0.3",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
